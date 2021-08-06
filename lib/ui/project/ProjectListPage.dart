@@ -171,7 +171,7 @@ class ProjectListPageStage extends State<ProjectListPage>
                   Container(
                       padding: EdgeInsets.fromLTRB(8, 16, 8, 8),
                       child: Image.network(
-                        _datas[index].envelopePic,
+                        _datas[index].envelopePic.replaceAll("https://www.wanandroid.com", "http://localhost:4040"),
                         width: 80,
                         height: 120,
                         fit: BoxFit.fill,

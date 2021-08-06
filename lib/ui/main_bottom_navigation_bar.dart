@@ -41,19 +41,19 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
             items: const <BottomNavigationBarItem>[
               BottomNavigationBarItem(
                 icon: Icon(Icons.home),
-                title: Text('首页'),
+                label: '首页',
               ),
               BottomNavigationBarItem(
                 icon: Icon(Icons.bubble_chart),
-                title: Text('知识体系'),
+                label: '知识体系',
               ),
               BottomNavigationBarItem(
                 icon: Icon(Icons.assessment),
-                title: Text('公众号'),
+                label: '公众号',
               ),
               BottomNavigationBarItem(
                 icon: Icon(Icons.book),
-                title: Text('项目'),
+                label: '项目',
               ),
             ],
             currentIndex: _selectedIndex,

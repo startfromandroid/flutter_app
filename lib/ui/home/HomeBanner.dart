@@ -41,7 +41,8 @@ class BannerWidgetState extends State<BannerWidget> {
       },
       child: new Container(
         child: new Image.network(
-          _bannerList[index].imagePath,
+          _bannerList[index].imagePath.replaceAll(
+              "https://www.wanandroid.com", "http://localhost:4040"),
           fit: BoxFit.fill,
         ),
       ),
