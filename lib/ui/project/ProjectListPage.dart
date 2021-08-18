@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_app/http/api_service.dart';
+import 'package:flutter_app/http/dio_manager.dart';
 import 'package:flutter_app/model/projectlist_model.dart';
 import 'package:flutter_app/util/navigator_util.dart';
 import 'package:flutter_easyrefresh/ball_pulse_footer.dart';
@@ -171,7 +172,11 @@ class ProjectListPageStage extends State<ProjectListPage>
                   Container(
                       padding: EdgeInsets.fromLTRB(8, 16, 8, 8),
                       child: Image.network(
-                        _datas[index].envelopePic.replaceAll("https://www.wanandroid.com", "http://localhost:4040"),
+                        isWeb
+                            ? _datas[index].envelopePic.replaceAll(
+                                "https://www.wanandroid.com",
+                                "http://localhost:4040")
+                            : _datas[index].envelopePic,
                         width: 80,
                         height: 120,
                         fit: BoxFit.fill,

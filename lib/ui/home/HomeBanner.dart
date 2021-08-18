@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/http/api_service.dart';
+import 'package:flutter_app/http/dio_manager.dart';
 import 'package:flutter_app/model/banner_model.dart';
 import 'package:flutter_app/util/navigator_util.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
@@ -41,8 +42,10 @@ class BannerWidgetState extends State<BannerWidget> {
       },
       child: new Container(
         child: new Image.network(
-          _bannerList[index].imagePath.replaceAll(
-              "https://www.wanandroid.com", "http://localhost:4040"),
+          isWeb
+              ? _bannerList[index].imagePath.replaceAll(
+                  "https://www.wanandroid.com", "http://localhost:4040")
+              : _bannerList[index].imagePath,
           fit: BoxFit.fill,
         ),
       ),
