@@ -2,7 +2,7 @@ import 'dart:io';
 
 import 'package:dio/dio.dart';
 
-const isWeb = false;
+const isWeb = true;
 
 class DioManager {
   Dio _dio;

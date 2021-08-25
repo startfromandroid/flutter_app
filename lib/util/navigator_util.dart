@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:common_utils/common_utils.dart';
+import 'package:flutter_app/http/dio_manager.dart';
 import 'package:flutter_app/ui/web/web_scaffold.dart';
 import 'package:url_launcher/url_launcher.dart';
 class NavigatorUtil {
@@ -12,7 +13,7 @@ class NavigatorUtil {
   static void pushWeb(BuildContext context,
       {String title, String titleId, String url, bool isHome: false}) {
     if (context == null || ObjectUtil.isEmpty(url)) return;
-    if (url.endsWith(".apk")) {
+    if (url.endsWith(".apk")||isWeb) {
       launchInBrowser(url, title: title ?? titleId);
     } else {
       Navigator.push(
@@ -33,4 +34,5 @@ class NavigatorUtil {
       throw 'Could not launch $url';
     }
   }
+
 }
